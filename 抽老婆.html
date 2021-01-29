@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        var lists = ["static/1.png", "static/2.png", "static/3.png", "static/4.png","static/5.png", "static/6.jpg"];
+
+        $(function (){
+            $("#b2").prop("disabled", true);
+            $("#b1").prop("disabled", false);
+            $("#b1").click(function () {
+                $("#b2").prop("disabled", false);
+                $("#b1").prop("disabled", true);
+                 interval = setInterval(function () {
+                     number = Math.floor(Math.random() * 6);
+                    $("#img1").prop("src", lists[number]);
+                }, 50);
+            });
+            $("#b2").click(function () {
+                $("#b2").prop("disabled", true);
+                $("#b1").prop("disabled", false);
+                clearInterval(interval);
+                $("#img2").prop("src", lists[number]).hide().show(1000);
+            });
+        });
+    </script>
+
+    <style>
+        .c1{
+            width: 20%;
+            height: 200px;
+        }
+        .c2{
+            width: 80%;
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+<div id="div0" class="c1">
+    <img src="static/1.png" id="img1" width="100%">
+</div>
+<input type="button" value="抽老婆" id="b1">
+<input type="button" value="停止" id="b2">
+<div id="div1" class="c2">
+    <img src="static/1.png" id="img2" width="100%">
+</div>
+</body>
+</html>

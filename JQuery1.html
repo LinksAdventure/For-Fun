@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery1</title>
+    <script src="JQuery.js">
+        $(function (){
+        });
+
+    </script>
+
+
+</head>
+<body>
+<input type="button" value="click me" id="btn">
+<input type="text" value="hello">
+<div>
+    <a>it's a sample</a>
+</div>
+<script>
+    $("#btn").click(function (){
+        alert("asda");
+    });
+
+    $("input[type='text']").val("abc");
+    var html = $("div").text();
+    alert(html);
+    var prop = $("#btn").prop("type", "text");
+    alert(prop);
+</script>
+</body>
+</html>

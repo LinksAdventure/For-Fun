@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JQuery.js">
+    </script>
+</head>
+<body>
+<div id="div0" style="display: none">
+    <img src="static/2.png" width="100%">
+</div>
+
+<input type="checkbox" id="main">
+<input type="checkbox" class="select">
+<input type="checkbox" class="select">
+<input type="checkbox" class="select">
+<input type="checkbox" class="select">
+
+<div id="div1">
+    <p>⚽️</p>
+    <p>😅️</p>
+    <p>🥰</p>
+    <p>😝</p>
+    <p>😎</p>
+</div>
+
+<div id="div2">
+    <p>请输入</p>
+</div>
+
+<script>
+    setTimeout(function (){
+        $("#div0").show("slow");
+    }, 3000);
+    setTimeout(function (){
+        $("#div0").hide("slow");
+    }, 8000);
+    $("#main").click(function () {
+        $(".select").prop("checked", this.checked);
+    });
+    $("#div1 p").click(function (){
+        $("#div2").append($(this).clone());
+    });
+
+</script>
+</body>
+</html>
